@@ -37,7 +37,10 @@ Example
 var rlp = require('readline-prompter');
 
 var tokens = ['first name', 'last name', 'cats name'];
-var def = {'first name': 'JP'};
+var def = {'name': {
+	defaultValue: 'JP',
+	prompt: 'JP Smith'
+}};
 var skip = {'cats name': 'petey'};
 
 
@@ -46,11 +49,11 @@ rlp(tokens, def, skip).end(function(results) {
 });
 ```
 
-The default for 'first name' is "JP" in this case. 'cats name' gets skipped. You would have to type in something for 'last name', it won't let you skip it.
+The default for 'name' is "JP" in this case (though it displays as 'JP Smith' to the user). 'cats name' gets skipped. You would have to type in something for 'last name', it won't let you skip it.
 
 Console:
 
-    first name: (JP)
+    name: (JP Smith)
     last name:
 
 
@@ -58,7 +61,7 @@ Output:
 
 ```json
 {
-    "first name": "JP",
+    "name": "JP",
     "last name": "Richardson",
     "cats name": "petey"
 }
