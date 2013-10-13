@@ -38,8 +38,8 @@ var rlp = require('readline-prompter');
 
 var tokens = ['first name', 'last name', 'cats name'];
 var def = {'name': {
-	defaultValue: 'JP',
-	prompt: 'JP Smith'
+	defaultResponse: 'JP',
+	display: 'JP Smith'
 }};
 var skip = {'cats name': 'petey'};
 
